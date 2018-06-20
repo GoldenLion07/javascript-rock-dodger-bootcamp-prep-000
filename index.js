@@ -50,21 +50,21 @@ return (
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
                */) {
-      return true
+      return true;
     }
   }
 }
 
 function createRock(x) {
-  const rock = document.createElement('div')
+  const rock = document.createElement('div');
 
-  rock.className = 'rock'
-  rock.style.left = `${x}px`
+  rock.className = 'rock';
+  rock.style.left = `${x}px`;
 
   // Hmmm, why would we have used `var` here?
-  var top = 0
+  var top = 0;
 
-  rock.style.top = top
+  rock.style.top = top;
 
   /**
    * Now that we have a rock, we'll need to append
@@ -84,7 +84,7 @@ GAME.appendChild(rock);
     }
     else if (top < GAME_HEIGHT-20) {
       top+=4;
-      rock.style.top = `${top}px`
+      rock.style.top = `${top}px`;
       window.requestAnimationFrame(moveRock);
     }
     else if (top >= GAME_HEIGHT-20) {
@@ -111,10 +111,10 @@ GAME.appendChild(rock);
 window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
-  ROCKS.push(rock)
+  ROCKS.push(rock);
 
   // Finally, return the rock element you've created
-  return rock
+  return rock;
 }
 
 /**
@@ -126,9 +126,9 @@ window.requestAnimationFrame(moveRock);
 function endGame() {
    clearInterval(gameInterval);
   ROCKS.forEach(function(rock)
-      {rock.remove()
+      {rock.remove();
       });
-  document.removeEventListener('keydown',moveDodger);
+  document.removeEventListener('keydown', moveDodger);
   return alert('YOU LOSE!');
 }
 function moveDodger(e) {
