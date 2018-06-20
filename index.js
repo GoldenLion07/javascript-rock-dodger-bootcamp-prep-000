@@ -79,7 +79,18 @@ GAME.appendChild(rock);
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    
+    if(checkCollision(rock)===true){
+      endGame();
+    }
+    else if (top < GAME_HEIGHT-20) {
+      top+=4;
+      rock.style.top = `${top}px`
+      window.requestAnimationFrame(moveRock);
+    }
+    else if (top >= GAME_HEIGHT-20) {
+      GAME.removeChild(rock);
+      ROCKS.shift();
+    }
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
