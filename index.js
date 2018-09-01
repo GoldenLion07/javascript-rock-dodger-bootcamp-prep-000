@@ -129,6 +129,7 @@ function endGame() {
       {rock.remove();
       });
   document.removeEventListener('keydown', moveDodger);
+  //Zdrake tried to help on this one evidently the problem was with the test; please fix seriously
   return alert('YOU LOSE!');
 }
 function moveDodger(e) {
